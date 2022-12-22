@@ -29,6 +29,7 @@
 	        	<include name="antlr-runtime-3.5.2.jar"/>
 			</fileset>
 			<fileset dir="${remoteRepository}">
+				<include name="BOOT-INF/lib/antlr-2.7.7.jar"/>
 				<include name="BOOT-INF/lib/spring-boot-2.5.4.jar"/>
 				<include name="BOOT-INF/lib/spring-boot-autoconfigure-2.5.4.jar"/>
 				<include name="BOOT-INF/lib/bcprov-jdk15on-1.55.jar"/>
@@ -114,15 +115,17 @@
 	 </target>
 	 <target name="clean">
 	 	<delete includeemptydirs="true">
-	 	  <fileset dir="${build.dir}/classes" includes="**/*"/>
+		 	  <fileset dir="${build.dir}/classes" includes="**/*"/>
+		 	  <fileset dir="lib" includes="**/*"/>
 	 	</delete>
+	 	<delete file="${build.dir}/DroolIntegration.jar"/>
 	 </target>
-	<target name="compile" unless="skip.compile" >
+	<target name="compile" depends="init" unless="skip.compile" >
 	    <javac srcdir="src/main/java" destdir="${build.dir}/classes" includeDestClasses="true" source="11" target="11">
 		   <classpath  refid="project.classpath"/>
 		</javac>
 	</target>
-    <target name="create_run_jar" depends="compile" unless="skip.jar">
+    <target name="create_run_jar" depends="clean,compile" unless="skip.jar">
 	    <spring-boot:exejar destfile="${spring-boot.jar}" classes="${build.dir}/classes" start-class="org.seven.telecom.DroolsDemoApplication">
 	  		<resources>
 	  			<fileset dir="src/main/resources" />
