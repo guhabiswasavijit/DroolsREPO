@@ -9,5 +9,6 @@ public final class Constants {
 	public static final String MESSAGE_INVALIDCURRENCY = "Invalid currency.";
 	public static final String MESSAGE_SAMEUSERTRANSACTION = "You can't send money to yourself.";
 	public static final String MESSAGE_SAMEUSERNAMEEXIST = "User with the same name exists.";
+	public static final String AUTHENTICATION_SUCCESS_RESPONSE = "Successfully authenticated";
 
 }

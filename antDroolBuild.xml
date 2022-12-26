@@ -29,6 +29,12 @@
 	        	<include name="antlr-runtime-3.5.2.jar"/>
 			</fileset>
 			<fileset dir="${remoteRepository}">
+				<include name="thymeleaf/spring-boot-2/unbescape-1.1.6.RELEASE.jar"/>
+				<include name="thymeleaf/spring-boot-2/attoparser-2.0.6.RELEASE.jar"/>
+				<include name="thymeleaf/spring-boot-2/freemarker-2.3.31.jar"/>
+				<include name="thymeleaf/spring-boot-2/thymeleaf-3.1.1.RELEASE.jar"/>
+				<include name="thymeleaf/spring-boot-2/thymeleaf-extras-java8time-3.0.4.RELEASE.jar"/>
+				<include name="thymeleaf/spring-boot-2/thymeleaf-spring5-3.1.1.RELEASE.jar"/>
 				<include name="BOOT-INF/lib/antlr-2.7.7.jar"/>
 				<include name="BOOT-INF/lib/spring-boot-2.5.4.jar"/>
 				<include name="BOOT-INF/lib/spring-boot-autoconfigure-2.5.4.jar"/>
